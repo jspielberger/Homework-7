@@ -1,18 +1,24 @@
 
- # Lillyhammer Was Netflix's First Show
+ # **Node Project Demo**
  ## Project Purpose 
- * ### To publicize the fact that Lillyhammer was Netflix's very first scripted program! 
+ * ### To demonstrate my ability to use Node.js as well as Markdown syntax. 
  ## Project Outline 
- 
+ * Intro
+* Body
+* Conclusion
+* Epilogue
+* Bibliography
+
  ## Project Installation
- * ### clone and go
+ * ### yarn is necessary for the installation.
  ## Git User Info
- * ### jspielberger 
+ > ### jspielberger 
 
  * <img src="https://avatars0.githubusercontent.com/u/56656855?v=4"><img>
  ## Project Licensing
- * ### To Kill
+ > __To Kill__
  ## Project Contributors
- * ### Netflix, God, Century City Westfield Mall...
+ > Thanks to Tony, Baloney, Mahoney, Coney for contributing to this project. 
+ > Without you, none of **this** would have been possible.   
 
  

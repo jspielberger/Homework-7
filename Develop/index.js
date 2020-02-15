@@ -54,20 +54,21 @@ for (let i=0; i < data.answers.table.length; i++) {
 }
 let readmeContent = 
 `
- # ${data.answers.title}
+ # **${data.answers.title}**
  ## Project Purpose 
  * ### ${data.answers.purpose}
  ## Project Outline 
  ${answerTable}
  ## Project Installation
- * ### ${data.answers.installation}
+ * ### ${data.answers.installation} is necessary for the installation.
  ## Git User Info
- * ### ${data.answers.username} \n
+ > ### ${data.answers.username} \n
  * <img src="${data.avatar_url}"><img>
  ## Project Licensing
- * ### ${data.answers.license}
+ > __${data.answers.license}__
  ## Project Contributors
- * ### ${data.answers.contributing}
+ > Thanks to ${data.answers.contributing} for contributing to this project. 
+ > Without you, none of **this** would have been possible.   
 
  `
 fs.writeFile(`${fileName}.md`, readmeContent, function(err){
