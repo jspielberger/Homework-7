@@ -1,6 +1,7 @@
 const axios = require("axios")
 const inquire = require('inquirer')
 const fs = require('fs');
+//where i put all the inquirer enabled questions, properties were message name type and choices 
 const questions = [
 {
     message: 'what is your Github username?',
@@ -21,7 +22,7 @@ const questions = [
     message: 'what sections would you like to include in your project?',
     name: 'table',
     type: 'checkbox',
-    choices: ['Intro','Body','Appendix','Bibliography','Conclusion']
+    choices: ['Intro','Body','Appendix','Conclusion','Epilogue', 'Bibliography']
 },
 {
     message: 'How would someone install your application?',
@@ -45,23 +46,28 @@ const questions = [
 //look up day 1 formatting of results...
 function writeToFile(fileName, data) {
 console.log(`${fileName}.md`);
-console.log(data)
+console.log(data);
+let answerTable = ""
+//for loop to seperate out the outline answers into seperate bullet points...
+for (let i=0; i < data.answers.table.length; i++) {
+    answerTable += `* ${data.answers.table[i]}` + "\n"
+}
 let readmeContent = 
 `
  # ${data.answers.title}
  ## Project Purpose 
- * ${data.answers.purpose}
+ * ### ${data.answers.purpose}
  ## Project Outline 
- * ${data.answers.table}
+ ${answerTable}
  ## Project Installation
- * ${data.answers.installation}
+ * ### ${data.answers.installation}
  ## Git User Info
- * ${data.answers.username} \n
+ * ### ${data.answers.username} \n
  * <img src="${data.avatar_url}"><img>
  ## Project Licensing
- * ${data.answers.license}
+ * ### ${data.answers.license}
  ## Project Contributors
- * ${data.answers.contributing}
+ * ### ${data.answers.contributing}
 
  `
 fs.writeFile(`${fileName}.md`, readmeContent, function(err){
